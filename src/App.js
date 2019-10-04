@@ -2,19 +2,57 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import marked from 'marked'
 
-
+// import eldar from './assets/eldar.jpg'
 import './App.css'
 
-import Head from './components/header'
 import Textarea from './components/textarea'
 import Previewer from './components/previewer'
 
-const defaultText = `
-<h1> Hello everyone!</h1>
-<h2> This is the project work of Free Code Camp from Eldar Nasyrov </h2>
-<b> Primary is move to ahead and all will be well)) </b>
+const defaultText = `# Welcome to my React Markdown Previewer!
 
-<a href='https://github.com/buugaaga/markdown-previewer'>it is my profile of github</a>
+## This is a sub-heading...
+### And here's some other cool stuff:
+  
+Heres some code, \`<div></div>\`, between 2 backticks.
+
+\`\`\`
+// this is multi-line code:
+
+function anotherExample(firstLine, lastLine) {
+  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
+    return multiLineCode;
+  }
+}
+\`\`\`
+  
+You can also make text **bold**... whoa!
+Or _italic_.
+Or... wait for it... **_both!_**
+And feel free to go crazy ~~crossing stuff out~~.
+
+There's also [links](https://www.freecodecamp.com), and
+> Block Quotes!
+
+And if you want to get really crazy, even tables:
+
+Wild Header | Crazy Header | Another Header?
+------------ | ------------- | ------------- 
+Your content can | be here, and it | can be here....
+And here. | Okay. | I think we get it.
+
+- And of course there are lists.
+  - Some are bulleted.
+     - With different indentation levels.
+        - That look like this.
+
+
+1. And there are numbererd lists too.
+1. Use just 1s if you want! 
+1. But the list goes on...
+- Even if you use dashes or asterisks.
+* And last but not least, let's not forget embedded images:
+
+![React Logo w/ Text](https://goo.gl/Umyytc)
 `
 
 class App extends Component {
@@ -46,7 +84,7 @@ class App extends Component {
       <div className='wrapper container'>
         <div className='row justify-content-around'>
           <h1 className='h1'>ILDAR</h1>
-          <Head />
+          
           <Textarea  value={this.state.value} handle={this.handleTextArea} />
           <Previewer marked={this.handleMarked()}/>
         </div>
