@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import marked from 'marked'
+import showdown from 'showdown'
 
 // import eldar from './assets/eldar.jpg'
 import './App.css'
@@ -8,48 +8,24 @@ import './App.css'
 import Textarea from './components/textarea'
 import Previewer from './components/previewer'
 
-const defaultText = `# Welcome to my React Markdown Previewer!
+const defaultText = `
 
-## This is a sub-heading...
-### And here's some other cool stuff:
-  
-Heres some code, \`<div></div>\`, between 2 backticks.
+<h1> hi babay </h1>
 
-\`\`\`
-// this is multi-line code:
+<h2> this is the project work from Nasyrov Eldar </h2>
+<b> what study i here?</b>
 
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-  }
-}
-\`\`\`
-  
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
+<ol>
+  <li>using React and it features</li>
+  <li>library downmarked</li>
+  <li>don't forgot textarea</li>
+  <li>etc))</li>
+</ol>
+  <a href="https://github.com/buugaaga">my home page on github</a>
+  <q>FreeCodeCamp</q>
+  \`one line code \`
 
-There's also [links](https://www.freecodecamp.com), and
-> Block Quotes!
-
-And if you want to get really crazy, even tables:
-
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | ------------- 
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
-
-- And of course there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
-
-
-1. And there are numbererd lists too.
-1. Use just 1s if you want! 
-1. But the list goes on...
-- Even if you use dashes or asterisks.
+<pre><code> more line code </code><pre>
 * And last but not least, let's not forget embedded images:
 
 ![React Logo w/ Text](https://goo.gl/Umyytc)
@@ -77,7 +53,11 @@ class App extends Component {
       value: data
     })
   }
-  handleMarked = () => marked(this.state.value)
+  handleMarked = () => {
+    let converter = new showdown.Converter()
+    let html = converter.makeHtml(this.state.value)
+    return html
+  }
   render() {
     
     return (
