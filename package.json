@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "gh-pages": "^2.1.1",
     "insane": "^2.6.2",
     "marked": "^0.7.0",
     "react": "^16.9.0",
@@ -13,10 +14,13 @@
     "showdown": "^1.9.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "homepage": "https://buugaaga.github.io/markdown-previewer"
   },
   "eslintConfig": {
     "extends": "react-app"
