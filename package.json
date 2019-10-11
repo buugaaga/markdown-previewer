@@ -19,9 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "homepage": "https://buugaaga.github.io/markdown-previewer"
+    "eject": "react-scripts eject"
   },
+  "homepage": "https://buugaaga.github.io/markdown-previewer",
   "eslintConfig": {
     "extends": "react-app"
   },
